@@ -41,7 +41,7 @@ export class HomePage {
 
     // Stop any current vibrations immediately
     // Works on Android and Windows only
-    this.vibration.vibrate(0);
+    //this.vibration.vibrate(0);
   }
 
 }
