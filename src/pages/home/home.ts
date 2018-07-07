@@ -17,12 +17,14 @@ export class HomePage {
 
     platform.ready().then(() => {
       this.socket = io.connect('URL');
+
+      this.vibration.vibrate([2000,1000,2000,2000,1000,2000,2000,1000,2000,2000,1000,2000,2000,1000,2000]);
     })
 
 
-    this.socket.emit('message', { key: 'value' })
-    this.socket.on("connect", () => {})
-    this.socket.on("message", () => {})
+    // this.socket.emit('message', { key: 'value' })
+    // this.socket.on("connect", () => {})
+    // this.socket.on("message", () => {})
     
 
   }
