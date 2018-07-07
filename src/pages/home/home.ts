@@ -16,15 +16,24 @@ export class HomePage {
   constructor(platform: Platform, public navCtrl: NavController, private vibration: Vibration) {
 
     platform.ready().then(() => {
-      this.socket = io.connect('URL');
+      this.socket = io.connect('https://0e1b06cd.ngrok.io');
 
       this.vibration.vibrate([2000,1000,2000,2000,1000,2000,2000,1000,2000,2000,1000,2000,2000,1000,2000]);
+
+      this.socket.on("connect", () => {
+
+        this.socket.on("canalOpen", data => {
+          this.vibration.vibrate(1000);
+
+          
+        })
+       })
     })
 
 
     // this.socket.emit('message', { key: 'value' })
-    // this.socket.on("connect", () => {})
-    // this.socket.on("message", () => {})
+ 
+   
     
 
   }
